@@ -1,0 +1,121 @@
+@import './base.css';
+
+.giris {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 200vw;
+  padding: 10vw;
+  font-weight: normal;
+  border: 4vw outset;
+  border-image-source: linear-gradient(to bottom, #38317c, #05e1cb);
+  border-image-slice: 1;
+  box-shadow: 0 0 10px 5px #ededec;
+  
+}
+
+
+.kyenile{
+  width: 100px;
+  height: 60px;
+  position: relative;
+  top: -81px;
+  background-color: #9ceae6fc;
+  font-size: 40px;
+  font-weight:bold;
+   right: -200px;
+   cursor: pointer;
+  }
+
+.kyenile:active{
+ background-color: #ff4848fc;
+}
+
+
+.sifresim {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  right: 20px;
+  width: 180px;
+}
+
+
+.sifrele {
+  position: absolute;
+  z-index: 1;
+  font-size: 2em;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+.sifresim img {
+  max-width: 180px; 
+  max-height: 150px; 
+}
+
+
+.giris-btn {
+  position:relative; 
+  top:-25px;
+  width: 300px;
+  height: 50px;
+  background-color: #9ceae6fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 27px;
+  color: #000000;
+  cursor: pointer;
+  font-weight:bold;
+}
+
+.giris-btn:active {
+  background-color: #ff4848fc;
+}
+
+.giris-yazi{
+ position:relative; 
+  top: -60px;
+  width: 300px;
+  height: 40px;
+}
+
+
+.logo {
+  width: 300px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.uyar{
+  position:fixed; 
+  top:800px;
+  color:white;
+  font-size: 12px;
+}
+input[type="text"],
+input[type="password"] {
+  padding: 0.7rem;
+  font-size: 0.8rem;
+  
+  }
+
+body {
+  background: linear-gradient(to right, #21001b, #0b0036, #013941);
+}
+
+
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 1rem;
+  }
+
