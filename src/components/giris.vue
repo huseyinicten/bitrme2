@@ -14,74 +14,65 @@
           <img src="/src/assets/sifrelemeresim.png" alt="Captch Background" />
           <span class="sifrele"></span>
         </div>
-        <button class="kyenile">↻</button>
+        <button class="kyenile" @click="yenile">↻</button>
       </div>
-      <input type="text" class="giris-yazi" placeholder="KODU GİRİNİZ" maxlength="6" spellcheck="false" required />
-      <button class="giris-btn">GİRİŞ</button>
-      <div class="durum"></div>
+      <input type="text" class="giris-yazi" placeholder="KODU GİRİNİZ" maxlength="6" spellcheck="false" required v-model="captcha" />
+      <button class="giris-btn" @click="giris">GİRİŞ</button>
+      <div class="durum">{{ durum }}</div>
       <p class="uyar"> ŞİFREMİ UNUTTUM! </p>
     </div>
   </div>
 </template>
-
 <script>
-export default {
-  name: "giris",
-  mounted() {
-    const sifrele = document.querySelector(".sifrele");
-    const email = document.querySelector(".mail");
-    const parol = document.querySelector(".parola");
-    const yenileBtn = document.querySelector(".kyenile");
-    const kgirdi = document.querySelector(".giris-yazi");
-    const girisBtn = document.querySelector(".giris-btn");
-    const durumTxt = document.querySelector(".durum");
-    const allCharacters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-    function getsifrele() {
+
+export default {
+  name: 'giris',
+  data() {
+    return {
+      username: '',
+      password: '',
+      captcha: '',
+      durum: '',
+    };
+  },
+  methods: {
+    yenile() {
+      this.captcha = '';
+      this.durum = '';
+      this.getSifrele();
+    },
+    getSifrele() {
+      const sifrele = document.querySelector('.sifrele');
+      const allCharacters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      sifrele.innerText = '';
       for (let i = 0; i < 5; i++) {
         const randomCharacter = allCharacters[Math.floor(Math.random() * allCharacters.length)];
         sifrele.innerText += ` ${randomCharacter}`;
       }
-    }
-
-    getsifrele();
-
-    yenileBtn.addEventListener("click", () => {
-      removeContent();
-      getsifrele();
-    });
-
-    girisBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      durumTxt.style.display = "block";
-
-      const inputVal = kgirdi.value.split("").join(" ");
-      if (inputVal === sifrele.innerText && email.value === "huss" && parol.value === "1234") {
-        durumTxt.style.position = "relative";
-        durumTxt.style.top = "-20px";
-        durumTxt.style.color = "#4db2ec";
-        durumTxt.innerText = "GİRİŞ YAPILDI";
+    },
+    giris() {
+      const inputVal = this.captcha.split('').join(' ');
+      if (inputVal === document.querySelector('.sifrele').innerText && this.username === 'huss' && this.password === '1234') {
+        
+       this.$router.push('/sayfa2');
+    
+   
+        this.durum = 'GİRİŞ YAPILDI';
+        
         setTimeout(() => {
-          removeContent();
-          getsifrele();
+
         }, 2000);
       } else {
-        durumTxt.style.position = "relative";
-        durumTxt.style.top = "-10px";
-        durumTxt.style.color = "#ff0000";
-        durumTxt.innerText = " LÜTFEN TEKRAR DENEYİN!";
+        this.durum = 'LÜTFEN TEKRAR DENEYİN!';
       }
-    });
-
-    function removeContent() {
-      kgirdi.value = "";
-      sifrele.innerText = "";
-      durumTxt.style.display = "none";
-    }
+    },
+  },
+  mounted() {
+    this.getSifrele();
   },
 };
 </script>
-
 <style scoped>
 h1 {
   margin-top: 2rem;

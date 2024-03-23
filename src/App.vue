@@ -1,21 +1,15 @@
-<template> 
- <div>
-    <header>
-     <giris/>
-    </header>
+<template>
+  <div id="app">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import giris from './components/giris.vue';
-
 export default {
-  components: {
-    giris,
-    
-}
+  name: 'App',
 };
 </script>
+
 
 <style scoped>
 header {
