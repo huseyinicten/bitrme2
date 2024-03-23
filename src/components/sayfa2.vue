@@ -26,7 +26,7 @@
 import Menu from './Menu.vue';
 import radarChart from './kart.vue';
 import chartCanvas from './kart2.vue';
-
+//huseyin
 export default {
   name: 'App',
   components: {
