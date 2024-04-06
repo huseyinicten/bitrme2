@@ -1,0 +1,82 @@
+@import './base.css';
+
+
+
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+  }
+
+  .radio-buttons{
+    display:flex;
+    margin-right: 10px;
+  }
+
+.input{
+
+    display: flex;
+  }
+  
+  
+  h3
+  {
+background-color: darkblue;
+color:#ccc
+  }
+  h2 {
+    font-family: "Arial Black", Arial, sans-serif;
+          font-size: 40px;     
+    margin-top: 840px;
+    text-align: center;
+      }
+  .forum {
+    max-height: 735px;
+   
+    overflow-y: auto; 
+    width: 850px; /* İstediğiniz genişliği belirleyin */
+  
+     /* İstediğiniz yüksekliği belirleyin */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 50px;
+    padding-top: -50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+  }
+  .form-group {
+    margin-bottom:1px;
+  }
+  textarea {
+    height: 150px; 
+    border: 2px solid #000000; 
+    padding: 5px; 
+  }
+    label {
+    display: block;
+    font-weight: bold;
+  }
+  label,
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 5px;
+  
+    
+    
+  }
+  ::placeholder {
+    color: #383535; /* Placeholder metin rengi */
+    font-style: arial black; /* Placeholder metin stili */
+    opacity: 0.9; /* Placeholder opaklığı */
+   
+    
+  }
+  
